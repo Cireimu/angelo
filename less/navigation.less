@@ -1,7 +1,6 @@
 .header-navigation {
   display: flex;
 
-  background: rgba(255, 237, 208, 0.25);
   padding: 2rem;
   flex-flow: row;
   justify-content: space-around;
@@ -100,11 +99,12 @@
     width: 25rem;
     z-index: 1;
     opacity: 0.6;
+    overflow: hidden;
   }
   .nav.expanded {
     right: 0;
     @media only screen and (max-width: 600px) {
-      right: 20rem;
+      right: 0rem;
     }
   }
   .nav ul {
@@ -170,4 +170,20 @@
       margin-left: 1.3rem;
     }
   }
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + section {
+  padding-top: 8rem;
+}
+
+#navbar {
+  overflow: hidden;
+  background-color: rgb(255, 246, 248);
 }
